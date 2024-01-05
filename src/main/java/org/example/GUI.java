@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Objects;
 
 public class GUI {
@@ -20,17 +21,19 @@ public class GUI {
             frame.setSize(1000, 700);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+
             JPanel mainPanel = new JPanel(new BorderLayout());
             JPanel photoPanel = new JPanel(new FlowLayout());
-            displayImage(photoPanel, "C:\\Users\\szbur\\IdeaProjects\\Formula1\\src\\main\\java\\org\\example\\fota.jpg");
+
+            displayImage(photoPanel, "fota.jpg");
 
             int horizontalGap = 100;
             int verticalGap = 5;
-            Font font = new Font("ComicSans", Font.BOLD | Font.ITALIC, 16);
-            JButton back = new JButton("Powrut");
-            JButton back2 = new JButton("Powrut");
+            Font font = new Font("ComicSans", Font.BOLD | Font.ITALIC, 18);
+            JButton back = new JButton("Menu Główne");
+            JButton back2 = new JButton("Menu Główne");
             back.setFont(font);
-            back.setBackground(Color.RED);
+            back.setBackground(Color.LIGHT_GRAY);
             back2.setBackground(Color.RED);
 
             JPanel driverMainPanel = new JPanel();
@@ -45,6 +48,8 @@ public class GUI {
             JPanel teamPanel = new JPanel();
             teamPanel.add(new JLabel("Team info :))"));
             teamPanel.add(back2, BorderLayout.CENTER);
+            teamPanel.setBackground(Color.PINK);
+            displayImage(teamPanel, "pobranyplik.jpg");
 
             CardLayout cardLayout = new CardLayout();
             JPanel cardPanel = new JPanel(cardLayout);
@@ -100,28 +105,57 @@ public class GUI {
         });
     }
 
-    private static void displayImage(JPanel panel, String imagePath) {
+    private static void displayImage(JPanel panel, String imageName) {
         try {
-            image = ImageIO.read(new File(imagePath));
-            ImageIcon icon = new ImageIcon(image);
-            JLabel label = new JLabel(icon);
-            panel.add(label);
+
+            ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+            InputStream inputStream = classLoader.getResourceAsStream(imageName);
+
+            if (inputStream != null) {
+                image = ImageIO.read(inputStream);
+                ImageIcon icon = new ImageIcon(image);
+                JLabel label = new JLabel(icon);
+                panel.add(label);
+            } else {
+                System.err.println("Nie udało się wczytać obrazu: " + imageName);
+            }
         } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
 
-    private void driver(JPanel panel) {
-        ImageIcon icon = new ImageIcon(Objects.requireNonNull(getClass().getResource("makswersztapen.png")));
-        for (int i = 0; i < 20; i++) {
-            JButton chuje = new JButton();
-            chuje.setIcon(icon);
-            chuje.setPreferredSize(new Dimension(icon.getIconWidth(), icon.getIconHeight()));
-            panel.add(chuje);
-        }
-        // tutaj scraper do kierowców ^ (do buttonów ofc)
-        // sens działania wiadomo ocb
 
+    private void driver(JPanel panel) {
+        String[] lista = {"1max","2perez","3leclerc","4sainz","5russel","6hamilton","7ocon","8gasly","9norris","10piastri",
+                "11bottas", "12zhou","13alonso","14stroll","15magnussen","16hulkenberg","17albon","18sargeant",
+                "19tsunoda","20ricciardo"};
+
+        for (int i = 0; i < 20; i++) {
+            JButton driverButton = new JButton();
+            ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+            String imageName = lista[i] + ".png";
+            InputStream inputStream = classLoader.getResourceAsStream(imageName);
+
+            if (inputStream != null) {
+                try {
+                    BufferedImage originalImage = ImageIO.read(inputStream);
+
+                    // Dostosuj rozmiar obrazu do wymiarów przycisku
+                    int buttonWidth = 150; // Zmiana szerokości przycisku
+                    int buttonHeight = 150; // Zmiana wysokości przycisku
+
+                    Image scaledImage = originalImage.getScaledInstance(buttonWidth, buttonHeight, Image.SCALE_SMOOTH);
+                    ImageIcon icon = new ImageIcon(scaledImage);
+                    driverButton.setIcon(icon);
+                    driverButton.setBackground(Color.DARK_GRAY);
+                    panel.add(driverButton);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            } else {
+                System.err.println("Błąd przy wczytywaniu obrazu: " + imageName);
+            }
+        }
     }
     private void teams(JPanel panel){
 
