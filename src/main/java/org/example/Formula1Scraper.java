@@ -29,7 +29,6 @@ public class Formula1Scraper {
         }
 
     }
-
     public static void main(String[] args) {
         Formula1Scraper test = new Formula1Scraper();
     }

@@ -9,3 +9,37 @@
 2024-01-04 21:18:42 INFO  Formula1Scraper:20 - Git.pl
 2024-01-04 23:02:12 INFO  Formula1Scraper:15 - Start scraping from https://www.formula1.com/en/results.html/2023/races/1226/abu-dhabi/race-result.html
 2024-01-04 23:02:13 INFO  Formula1Scraper:20 - Git.pl
+2024-01-05 18:55:30 INFO  Formula1Scraper:15 - Start scraping from https://www.formula1.com/en/results.html/2023/races/1226/abu-dhabi/race-result.html
+2024-01-05 18:55:31 INFO  Formula1Scraper:20 - Git.pl
+2024-01-05 18:58:38 INFO  DriverScraper:19 - Git.pl
+2024-01-05 19:00:05 INFO  DriverScraper:19 - OK
+2024-01-05 19:01:00 INFO  DriverScraper:19 - OK
+2024-01-05 19:03:19 INFO  DriverScraper:19 - OK
+2024-01-05 19:04:47 INFO  DriverScraper:19 - OK
+2024-01-05 19:08:44 INFO  DriverScraper:19 - OK
+2024-01-05 19:08:54 INFO  DriverScraper:19 - OK
+2024-01-05 19:10:08 ERROR DriverScraper:27 - nie pobrano informacji o kierowcy
+2024-01-05 19:10:18 INFO  DriverScraper:19 - OK
+2024-01-05 19:10:33 INFO  DriverScraper:19 - OK
+2024-01-05 19:10:43 INFO  DriverScraper:19 - OK
+2024-01-05 19:10:52 ERROR DriverScraper:27 - nie pobrano informacji o kierowcy
+2024-01-05 19:15:52 INFO  DriverScraper:23 - OK
+2024-01-05 19:16:14 INFO  DriverScraper:23 - OK
+2024-01-05 19:16:27 INFO  DriverScraper:23 - OK
+2024-01-05 19:16:37 INFO  DriverScraper:23 - OK
+2024-01-05 19:18:04 INFO  DriverScraper:22 - OK
+2024-01-05 19:18:21 INFO  DriverScraper:22 - OK
+2024-01-05 19:21:10 INFO  DriverScraper:23 - OK
+2024-01-05 19:22:04 INFO  DriverScraper:23 - OK
+2024-01-05 19:22:19 INFO  DriverScraper:23 - OK
+2024-01-05 19:23:46 INFO  DriverScraper:23 - OK
+2024-01-05 19:24:08 INFO  DriverScraper:22 - OK
+2024-01-05 19:24:50 INFO  DriverScraper:22 - OK
+2024-01-05 19:30:17 INFO  DriverScraper:23 - OK
+2024-01-05 19:30:30 INFO  DriverScraper:23 - OK
+2024-01-05 19:30:39 INFO  DriverScraper:23 - OK
+2024-01-05 19:31:45 INFO  DriverScraper:23 - OK
+2024-01-05 19:34:59 INFO  DriverScraper:24 - OK
+2024-01-05 19:37:36 INFO  DriverScraper:24 - OK
+2024-01-05 19:38:15 INFO  DriverScraper:24 - OK
+2024-01-05 19:38:21 INFO  DriverScraper:24 - OK
