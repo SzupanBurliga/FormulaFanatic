@@ -22,7 +22,6 @@ public class GUI {
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
-
             JPanel mainPanel = new JPanel(new BorderLayout());
             JPanel photoPanel = new JPanel(new FlowLayout());
 
@@ -42,7 +41,7 @@ public class GUI {
             driverMainPanel.setBackground(Color.BLACK);
             JPanel driverPanel = new JPanel(new BorderLayout());
 
-            driverMainPanel.setLayout(new GridLayout(5,4,5,5));
+            driverMainPanel.setLayout(new GridLayout(5, 4, 5, 5));
             driverPanel.setBackground(Color.BLACK);
             driverPanel.add(back, BorderLayout.NORTH);
             driverPanel.add(driverMainPanel, BorderLayout.CENTER);
@@ -51,8 +50,7 @@ public class GUI {
             JPanel driverPhoto = new JPanel();
             JPanel driverArry = new JPanel();
             driverChose.add(driverPhoto, BorderLayout.WEST);
-            driverChose.add(driverArry,BorderLayout.EAST);
-
+            driverChose.add(driverArry, BorderLayout.EAST);
 
 
             //team panel
@@ -71,6 +69,7 @@ public class GUI {
             JPanel panel1 = new JPanel();
             panel1.add(test);
             panel1.add(back3);
+
             driverDetailsPanel.add(panel1);
 
             cardPanel.add(photoPanel, "photo");
@@ -80,7 +79,7 @@ public class GUI {
             cardPanel.add(driverDetailsPanel, "driverDetails");
 
 
-            driver(driverMainPanel, cardLayout, cardPanel);
+            driver(driverMainPanel, cardLayout, cardPanel, panel1);
 
             JPanel buttonPanel = new JPanel();
             JButton kierowcy = new JButton("Kierowcy");
@@ -157,10 +156,10 @@ public class GUI {
     }
 
 
-    private void driver(JPanel panel, CardLayout cardLayout, JPanel cardPanel) {
-        String[] lista = {"1max","2perez","3leclerc","4sainz","5russel","6hamilton","7ocon","8gasly","9norris","10piastri",
-                "11bottas", "12zhou","13alonso","14stroll","15magnussen","16hulkenberg","17albon","18sargeant",
-                "19tsunoda","20ricciardo"};
+    private void driver(JPanel panel, CardLayout cardLayout, JPanel cardPanel, JPanel driverPanel) {
+        String[] lista = {"1max", "2perez", "3leclerc", "4sainz", "5russel", "6hamilton", "7ocon", "8gasly", "9norris", "10piastri",
+                "11bottas", "12zhou", "13alonso", "14stroll", "15magnussen", "16hulkenberg", "17albon", "18sargeant",
+                "19tsunoda", "20ricciardo"};
 
         for (int i = 0; i < 20; i++) {
 
@@ -183,7 +182,6 @@ public class GUI {
                     // przyciski kierowcow /\
 
                     String currentDriver = lista[i]; // capture current driverName in final variable
-                    driverInfo(currentDriver);
                     driverButton.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
@@ -192,6 +190,7 @@ public class GUI {
 
                             // Switch to the new driver details panel
                             cardLayout.show(cardPanel, "driverDetails");
+                            driverInfo(currentDriver, driverPanel);
                         }
                     });
 
@@ -203,66 +202,120 @@ public class GUI {
             }
         }
     }
-    private static void teams(){
+
+    private static void teams() {
 
     }
 
-    private static void driverInfo(String driver){
-        //testowo czy to ma sens
-        switch (driver) {
-            case "1max":
-                System.out.println("test");
-            case "2perez":
-                System.out.println("test");
-            case "3leclerc":
-                System.out.println("test");
-            case "4sainz":
-                System.out.println("test");
-            case "5russel":
-                System.out.println("test");
-            case "6hamilton":
-                System.out.println("test");
-            case "7ocon":
-                System.out.println("test");
-            case "8gasly":
-                System.out.println("test");
-            case "9norris":
-                System.out.println("test");
-            case "10piastri":
-                System.out.println("test");
-            case "11bottas":
-                System.out.println("test");
-            case "12zhou":
-                System.out.println("test");
-            case "13alonso":
-                System.out.println("test");
-            case "14stroll":
-                System.out.println("test");
-            case "15magnussen":
-                System.out.println("test");
-            case "16hulkenberg":
-                System.out.println("test");
-            case "17albon":
-                System.out.println("test");
-            case "18sargeant":
-                System.out.println("test");
-            case "19tsunoda":
-                System.out.println("test");
-            case "20ricciardo":
-                System.out.println("test");
-            default:
-                System.out.println("test22");
-        };
+    private static void driverInfo(String driver, JPanel panel) {
+
+        // Sprawdzamy, czy panel już istnieje w rodzicielskim panelu
+        boolean panelExists = false;
+        Component[] components = panel.getComponents();
+        for (Component component : components) {
+            if (component instanceof JPanel && component.getName() != null && component.getName().equals(driver)) {
+                panelExists = true;
+                break;
+            }
         }
 
+        // Jeżeli panel nie istnieje, to dodajemy go
+        if (!panelExists) {
+            JLabel name = new JLabel("Imie");
+            JPanel maxPanel = new JPanel();
+            switch (driver) {
+                case "1max":
+
+                    maxPanel.setName(driver); // Ustawiamy unikalną nazwę dla panelu
+                    DriverScraper verstappen = new DriverScraper();
+                    verstappen.getData("max-verstappen");
+                    JLabel team = new JLabel(verstappen.driverData.get("team"));
+                    maxPanel.add(team, BorderLayout.NORTH);
+                    panel.add(maxPanel, BorderLayout.WEST);
+                    System.out.println("1");
+                    break;
+                case "2perez":
+
+                    maxPanel.setName(driver); // Ustawiamy unikalną nazwę dla panel
+                    DriverScraper perez = new DriverScraper();
+                    perez.getData("sergio-perez");
+                    team = new JLabel(perez.driverData.get("team"));
+                    maxPanel.add(team, BorderLayout.WEST);
+                    panel.add(maxPanel, BorderLayout.NORTH);
+                    System.out.println("2");
+                    break;
+                case "3leclerc":
 
 
-    public static void main(String[] args) {
-        GUI gui = new GUI();
-        teams();
-        DriverScraper hamilton = new DriverScraper();
-        hamilton.getData("lewis-hamilton");
-        System.out.println(hamilton.driverData.get("birth_date"));
 
+                    break;
+                case "4sainz":
+                    System.out.println("test");
+                    break;
+                case "5russel":
+                    System.out.println("test");
+                    break;
+                case "6hamilton":
+                    System.out.println("test");
+                    break;
+                case "7ocon":
+                    System.out.println("test");
+                    break;
+                case "8gasly":
+                    System.out.println("test");
+                    break;
+                case "9norris":
+                    System.out.println("test");
+                    break;
+                case "10piastri":
+                    System.out.println("test");
+                    break;
+                case "11bottas":
+                    System.out.println("test");
+                    break;
+                case "12zhou":
+                    System.out.println("test");
+                    break;
+                case "13alonso":
+                    System.out.println("test");
+                    break;
+                case "14stroll":
+                    System.out.println("test");
+                    break;
+                case "15magnussen":
+                    System.out.println("test");
+                    break;
+                case "16hulkenberg":
+                    System.out.println("test");
+                    break;
+                case "17albon":
+                    System.out.println("test");
+                    break;
+                case "18sargeant":
+                    System.out.println("test");
+                    break;
+                case "19tsunoda":
+                    System.out.println("test");
+                    break;
+                case "20ricciardo":
+                    System.out.println("test");
+                    break;
+                default:
+
+                    break;
+            }
+            ;
+        }
     }
-}
+
+
+        public static void main (String[]args){
+            GUI gui = new GUI();
+            teams();
+            DriverScraper hamilton = new DriverScraper();
+            hamilton.getData("lewis-hamilton");
+            System.out.println(hamilton.driverData.get("birth_date"));
+
+        }
+    }
+
