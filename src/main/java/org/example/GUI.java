@@ -212,7 +212,6 @@ public class GUI {
         // Sprawdzamy, czy panel już istnieje w rodzicielskim panelu
         boolean panelExists = false;
         Component[] components = cardPanel.getComponents();
-
         for (Component component : components) {
             if (component instanceof JPanel) {
                 JPanel existingPanel = (JPanel) component;
@@ -239,13 +238,35 @@ public class GUI {
                         cardLayout.show(cardPanel, "driver"); // Przełączanie do panelu z listą kierowców
                     }
                 });
-                DriverScraper scraper = new DriverScraper();
-                scraper.getData(driver);
-                JLabel label = new JLabel(scraper.driverData.get("birth_date"));
-                JLabel label2 = new JLabel(scraper.driverData.get("team"));
+                DriverScraper d_scraper = new DriverScraper();
+                d_scraper.getData(driver);
+                JLabel text1 = new JLabel("Team: ");
+                JLabel team = new JLabel(d_scraper.driverData.get("team"));
+                JLabel country = new JLabel(d_scraper.driverData.get("country"));
+                JLabel podiums = new JLabel(d_scraper.driverData.get("podiums"));
+                JLabel points = new JLabel(d_scraper.driverData.get("points"));
+                JLabel grand_prix_entered = new JLabel(d_scraper.driverData.get("grand_prix_entered"));
+                JLabel world_champ = new JLabel(d_scraper.driverData.get("world_champ"));
+                JLabel highest_finish = new JLabel(d_scraper.driverData.get("highest_finish"));
+                JLabel highest_position = new JLabel(d_scraper.driverData.get("highest_position"));
+                JLabel birth_date = new JLabel(d_scraper.driverData.get("birth_date"));
+                JLabel birth_place = new JLabel(d_scraper.driverData.get("birth_place"));
+
+
                 driverDetailsPanel.add(backButton);
-                driverDetailsPanel.add(label);
-                driverDetailsPanel.add(label2);
+                driverDetailsPanel.add(team);
+                driverDetailsPanel.add(country,BorderLayout.NORTH);
+                driverDetailsPanel.add(podiums);
+                driverDetailsPanel.add(points);
+                driverDetailsPanel.add(grand_prix_entered);
+                driverDetailsPanel.add(world_champ);
+                driverDetailsPanel.add(highest_finish);
+                driverDetailsPanel.add(highest_position);
+                driverDetailsPanel.add(birth_date);
+                driverDetailsPanel.add(birth_place);
+
+
+
                 // Dodajemy driverDetailsPanel do rodzicielskiego panelu
                 cardPanel.add(driverDetailsPanel, driver);
 
