@@ -17,7 +17,7 @@ public class GUI {
     public GUI() {
         SwingUtilities.invokeLater(() -> {
 
-            JFrame frame = new JFrame("DriverData");
+            JFrame frame = new JFrame("FormulaFanatic");
             frame.setSize(1200, 800);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -29,6 +29,7 @@ public class GUI {
 
             int horizontalGap = 100;
             int verticalGap = 5;
+
             Font font = new Font("Arial", Font.BOLD | Font.ITALIC, 18);
             JButton back = new JButton("Menu Główne");
             JButton back2 = new JButton("Menu Główne");
@@ -66,11 +67,12 @@ public class GUI {
             JPanel driverDetailsPanel = new JPanel(new CardLayout());
 
             JLabel test = new JLabel("dupa");
-            JPanel panel1 = new JPanel();
-            panel1.add(test);
-            panel1.add(back3);
+            GridLayout gridLayout = new GridLayout(2,1);
+            driverDetailsPanel.setLayout(gridLayout);
+            driverDetailsPanel.add(back3);
 
-            driverDetailsPanel.add(panel1);
+
+
 
             cardPanel.add(photoPanel, "photo");
             cardPanel.add(driverPanel, "driver");
@@ -79,7 +81,7 @@ public class GUI {
             cardPanel.add(driverDetailsPanel, "driverDetails");
 
 
-            driver(driverMainPanel, cardLayout, cardPanel, panel1);
+            driver(driverMainPanel, cardLayout, cardPanel, driverDetailsPanel);
 
             JPanel buttonPanel = new JPanel();
             JButton kierowcy = new JButton("Kierowcy");
@@ -185,12 +187,11 @@ public class GUI {
                     driverButton.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            // Create a new panel for the specific driver
-                            JPanel driverDetailsPanel = new JPanel(new BorderLayout());
+
 
                             // Switch to the new driver details panel
                             cardLayout.show(cardPanel, "driverDetails");
-                            driverInfo(currentDriver, driverPanel);
+                            driverInfo(currentDriver, driverPanel, cardPanel, cardLayout);
                         }
                     });
 
@@ -207,105 +208,53 @@ public class GUI {
 
     }
 
-    private static void driverInfo(String driver, JPanel panel) {
-
+    private static void driverInfo(String driver, JPanel driverPanel, JPanel cardPanel, CardLayout cardLayout) {
         // Sprawdzamy, czy panel już istnieje w rodzicielskim panelu
         boolean panelExists = false;
-        Component[] components = panel.getComponents();
+        Component[] components = cardPanel.getComponents();
+
         for (Component component : components) {
-            if (component instanceof JPanel && component.getName() != null && component.getName().equals(driver)) {
-                panelExists = true;
-                break;
+            if (component instanceof JPanel) {
+                JPanel existingPanel = (JPanel) component;
+                if (Objects.equals(existingPanel.getName(), driver)) {
+                    panelExists = true;
+                    break;
+                }
             }
         }
 
-        // Jeżeli panel nie istnieje, to dodajemy go
-        if (!panelExists) {
-            JLabel name = new JLabel("Imie");
-            JPanel maxPanel = new JPanel();
-            switch (driver) {
-                case "1max":
 
-                    maxPanel.setName(driver); // Ustawiamy unikalną nazwę dla panelu
-                    DriverScraper verstappen = new DriverScraper();
-                    verstappen.getData("max-verstappen");
-                    JLabel team = new JLabel(verstappen.driverData.get("team"));
-                    maxPanel.add(team, BorderLayout.NORTH);
-                    panel.add(maxPanel, BorderLayout.WEST);
-                    System.out.println("1");
-                    break;
-                case "2perez":
+            if (!panelExists) {
+                // Jeśli panel nie istnieje, tworzymy nowy
+                JPanel driverDetailsPanel = new JPanel();
+                driverDetailsPanel.setName(driver); // Ustawienie nazwy kierowcy jako identyfikatora panelu
+                driverDetailsPanel.setLayout(new GridLayout(2, 1));
 
-                    maxPanel.setName(driver); // Ustawiamy unikalną nazwę dla panel
-                    DriverScraper perez = new DriverScraper();
-                    perez.getData("sergio-perez");
-                    team = new JLabel(perez.driverData.get("team"));
-                    maxPanel.add(team, BorderLayout.WEST);
-                    panel.add(maxPanel, BorderLayout.NORTH);
-                    System.out.println("2");
-                    break;
-                case "3leclerc":
+                // Możesz dodać komponenty do driverDetailsPanel zgodnie z Twoimi potrzebami
+                JButton backButton = new JButton("Powrót do listy kierowców");
+                backButton.setSize(50,100);
+                backButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        cardLayout.show(cardPanel, "driver"); // Przełączanie do panelu z listą kierowców
+                    }
+                });
+                DriverScraper scraper = new DriverScraper();
+                scraper.getData(driver);
+                JLabel label = new JLabel(scraper.driverData.get("birth_date"));
+                JLabel label2 = new JLabel(scraper.driverData.get("team"));
+                driverDetailsPanel.add(backButton);
+                driverDetailsPanel.add(label);
+                driverDetailsPanel.add(label2);
+                // Dodajemy driverDetailsPanel do rodzicielskiego panelu
+                cardPanel.add(driverDetailsPanel, driver);
 
-
-
-                    break;
-                case "4sainz":
-                    System.out.println("test");
-                    break;
-                case "5russel":
-                    System.out.println("test");
-                    break;
-                case "6hamilton":
-                    System.out.println("test");
-                    break;
-                case "7ocon":
-                    System.out.println("test");
-                    break;
-                case "8gasly":
-                    System.out.println("test");
-                    break;
-                case "9norris":
-                    System.out.println("test");
-                    break;
-                case "10piastri":
-                    System.out.println("test");
-                    break;
-                case "11bottas":
-                    System.out.println("test");
-                    break;
-                case "12zhou":
-                    System.out.println("test");
-                    break;
-                case "13alonso":
-                    System.out.println("test");
-                    break;
-                case "14stroll":
-                    System.out.println("test");
-                    break;
-                case "15magnussen":
-                    System.out.println("test");
-                    break;
-                case "16hulkenberg":
-                    System.out.println("test");
-                    break;
-                case "17albon":
-                    System.out.println("test");
-                    break;
-                case "18sargeant":
-                    System.out.println("test");
-                    break;
-                case "19tsunoda":
-                    System.out.println("test");
-                    break;
-                case "20ricciardo":
-                    System.out.println("test");
-                    break;
-                default:
-
-                    break;
+                // Przełączamy układ kart na nowo dodany panel
             }
-            ;
-        }
+                cardLayout.show(cardPanel, driver);
+
+
+
     }
 
 
