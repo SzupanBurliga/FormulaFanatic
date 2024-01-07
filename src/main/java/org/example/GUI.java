@@ -191,7 +191,7 @@ public class GUI {
 
                             // Switch to the new driver details panel
                             cardLayout.show(cardPanel, "driverDetails");
-                            driverInfo(currentDriver, driverPanel, cardPanel, cardLayout);
+                            driverInfo(currentDriver, driverPanel, cardPanel, cardLayout,originalImage);
                         }
                     });
 
@@ -208,7 +208,7 @@ public class GUI {
 
     }
 
-    private static void driverInfo(String driver, JPanel driverPanel, JPanel cardPanel, CardLayout cardLayout) {
+    private static void driverInfo(String driver, JPanel driverPanel, JPanel cardPanel, CardLayout cardLayout, Image originalImage) {
         // Sprawdzamy, czy panel już istnieje w rodzicielskim panelu
         boolean panelExists = false;
         Component[] components = cardPanel.getComponents();
@@ -225,13 +225,36 @@ public class GUI {
 
             if (!panelExists) {
                 // Jeśli panel nie istnieje, tworzymy nowy
+
+                System.out.println(driver);
                 JPanel driverDetailsPanel = new JPanel();
-                driverDetailsPanel.setName(driver); // Ustawienie nazwy kierowcy jako identyfikatora panelu
+                JPanel driverText = new JPanel();
+                driverText.setLayout(new GridLayout(12,2));
+                driverDetailsPanel.add(driverText,BorderLayout.SOUTH);
+                driverDetailsPanel.setName(driver);
+                // Ustawienie nazwy kierowcy jako identyfikatora panelu
                 driverDetailsPanel.setLayout(new GridLayout(2, 1));
 
-                // Możesz dodać komponenty do driverDetailsPanel zgodnie z Twoimi potrzebami
+                JLabel image = new JLabel("test");
+                image.setBackground(Color.RED);
+
                 JButton backButton = new JButton("Powrót do listy kierowców");
+                JPanel buttonPanel = new JPanel();
+                buttonPanel.add(backButton);
                 backButton.setSize(50,100);
+                Font fontLabel = new Font("Arial", Font.BOLD, 18);
+                Font fontInfo = new Font("Arial",Font.PLAIN,18);
+
+                String[] nameParts = driver.split("-");
+                // Przekształcenie pierwszych liter każdego słowa na wielkie
+                StringBuilder formattedName = new StringBuilder();
+                for (String part : nameParts) {
+                    formattedName.append(Character.toUpperCase(part.charAt(0)))
+                            .append(part.substring(1)).append(" ");
+                }
+                formattedName.deleteCharAt(formattedName.length() - 1);
+
+
                 backButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
@@ -240,7 +263,23 @@ public class GUI {
                 });
                 DriverScraper d_scraper = new DriverScraper();
                 d_scraper.getData(driver);
-                JLabel text1 = new JLabel("Team: ");
+                driverDetailsPanel.add(buttonPanel,BorderLayout.NORTH);
+              //  driverDetailsPanel.add(image);
+                JLabel text0 = new JLabel("Imię i nazwisko ");
+                JLabel text1 = new JLabel("Drużyna ");
+                JLabel text2 = new JLabel("Kraj ");
+                JLabel text3 = new JLabel("Ilość podium ");
+                JLabel text4 = new JLabel("Suma punktów ");
+                JLabel text5 = new JLabel("Udział w Grand Prix ");
+                JLabel text6 = new JLabel("Mistrzostwa świata ");
+                JLabel text7 = new JLabel("Najwyższe miejsce pod koniec");
+                JLabel text8 = new JLabel("Najwyższa pozycja ");
+                JLabel text9 = new JLabel("Data urodzenia ");
+                JLabel text10 = new JLabel("Miejsce urodzenia ");
+                text0.setFont(fontLabel);
+                text1.setFont(fontLabel);text2.setFont(fontLabel);text3.setFont(fontLabel);text4.setFont(fontLabel);text5.setFont(fontLabel);
+                text6.setFont(fontLabel);text7.setFont(fontLabel);text8.setFont(fontLabel);text9.setFont(fontLabel);text10.setFont(fontLabel);
+                JLabel name = new JLabel(formattedName.toString());
                 JLabel team = new JLabel(d_scraper.driverData.get("team"));
                 JLabel country = new JLabel(d_scraper.driverData.get("country"));
                 JLabel podiums = new JLabel(d_scraper.driverData.get("podiums"));
@@ -251,19 +290,16 @@ public class GUI {
                 JLabel highest_position = new JLabel(d_scraper.driverData.get("highest_position"));
                 JLabel birth_date = new JLabel(d_scraper.driverData.get("birth_date"));
                 JLabel birth_place = new JLabel(d_scraper.driverData.get("birth_place"));
+                name.setFont(fontInfo);
+                team.setFont(fontInfo);country.setFont(fontInfo);podiums.setFont(fontInfo);points.setFont(fontInfo);grand_prix_entered.setFont(fontInfo);
+                world_champ.setFont(fontInfo);highest_finish.setFont(fontInfo);highest_position.setFont(fontInfo);birth_date.setFont(fontInfo);birth_place.setFont(fontInfo);
 
 
-                driverDetailsPanel.add(backButton);
-                driverDetailsPanel.add(team);
-                driverDetailsPanel.add(country,BorderLayout.NORTH);
-                driverDetailsPanel.add(podiums);
-                driverDetailsPanel.add(points);
-                driverDetailsPanel.add(grand_prix_entered);
-                driverDetailsPanel.add(world_champ);
-                driverDetailsPanel.add(highest_finish);
-                driverDetailsPanel.add(highest_position);
-                driverDetailsPanel.add(birth_date);
-                driverDetailsPanel.add(birth_place);
+                driverText.add(text0);driverText.add(name);
+                driverText.add(text1);driverText.add(team);driverText.add(text2);driverText.add(country);driverText.add(text3);
+                driverText.add(podiums);driverText.add(text4);driverText.add(points);driverText.add(text5);driverText.add(grand_prix_entered);
+                driverText.add(text6);driverText.add(world_champ);driverText.add(text7);driverText.add(highest_finish);driverText.add(text8);
+                driverText.add(highest_position);driverText.add(text9);driverText.add(birth_date);driverText.add(text10);driverText.add(birth_place);
 
 
 
