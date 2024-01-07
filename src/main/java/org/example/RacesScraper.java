@@ -4,37 +4,36 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 
 import org.apache.logging.log4j.*;
 
 public class RacesScraper {
     private static final Logger logger = LogManager.getLogger(RacesScraper.class);
     static Document doc;
+   static ArrayList<String> raceData = new ArrayList<>();
     public static void getData(String year) {
         String url = "https://www.formula1.com/en/results.html/"+year+"/races.html";
-        logger.info("Start scraping from " +  url);
+        logger.info("Scrapowanie informacji z: "+url);
         try {
             doc = Jsoup.connect(url).get();
             Elements body = doc.select("tbody");
-            String[] raceData = new String[8*body.select("tr").size()];
+
             logger.info("OK");
             for (int i = 0; i < (8 * body.select("tr").size()); i++) {
                 //System.out.println(body.select("td").get(i).text());
-                raceData[i]=body.select("td").get(i).text();
-
+                raceData.add(body.select("td").get(i).text());
+                System.out.println(raceData.get(i));
             }
-
         } catch (IOException e) {
-            logger.error("nie pobrano informacji z linku"+ url);
+            logger.error("Błąd Scrapera, nie pobrano informacji z: "+ url);
         }
 
     }
-  /*
+
     public static void main(String[] args) {
-        RacesScraper.getData("2023");
-        System.out.println(raceData[2]);
+        RacesScraper race = new RacesScraper();
+        race.getData("2023");
+
     }
-*/
 }

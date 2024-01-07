@@ -343,3 +343,40 @@
 2024-01-07 11:56:37 INFO  DriverScraper:24 - OK
 2024-01-07 11:57:38 INFO  DriverScraper:24 - OK
 2024-01-07 11:58:39 INFO  DriverScraper:24 - OK
+2024-01-07 20:44:00 INFO  DriverScraper:24 - OK
+2024-01-07 20:46:28 INFO  DriverScraper:24 - OK
+2024-01-07 20:46:30 INFO  DriverScraper:24 - OK
+2024-01-07 20:46:35 INFO  DriverScraper:24 - OK
+2024-01-07 20:46:42 INFO  DriverScraper:24 - OK
+2024-01-07 20:46:44 INFO  DriverScraper:24 - OK
+2024-01-07 20:46:49 INFO  DriverScraper:24 - OK
+2024-01-07 20:46:58 INFO  DriverScraper:24 - OK
+2024-01-07 20:47:01 INFO  DriverScraper:24 - OK
+2024-01-07 20:47:04 INFO  DriverScraper:24 - OK
+2024-01-07 20:47:09 INFO  DriverScraper:24 - OK
+2024-01-07 20:47:12 INFO  DriverScraper:24 - OK
+2024-01-07 20:47:17 INFO  DriverScraper:24 - OK
+2024-01-07 20:47:22 INFO  DriverScraper:24 - OK
+2024-01-07 20:47:26 INFO  DriverScraper:24 - OK
+2024-01-07 20:47:28 INFO  DriverScraper:24 - OK
+2024-01-07 20:47:33 INFO  DriverScraper:24 - OK
+2024-01-07 20:47:41 INFO  DriverScraper:24 - OK
+2024-01-07 20:47:48 INFO  DriverScraper:24 - OK
+2024-01-07 20:51:47 INFO  DriverScraper:24 - OK
+2024-01-07 20:51:51 INFO  DriverScraper:24 - OK
+2024-01-07 20:51:55 INFO  DriverScraper:24 - OK
+2024-01-07 20:53:41 INFO  DriverScraper:24 - OK
+2024-01-07 20:55:40 ERROR RacesScraper:200 - Błąd przy wczytywaniu obrazu: 1max-verstappen.png
+2024-01-07 20:56:51 INFO  DriverScraper:24 - OK
+2024-01-07 20:59:13 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/oscar-piastri.html
+2024-01-07 20:59:17 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/lando-norris.html
+2024-01-07 21:02:08 INFO  RacesScraper:14 - Start scraping from https://www.formula1.com/en/results.html/2020/races.html
+2024-01-07 21:02:09 INFO  RacesScraper:19 - OK
+2024-01-07 21:05:28 INFO  RacesScraper:14 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-07 21:05:28 INFO  RacesScraper:19 - OK
+2024-01-07 21:09:35 INFO  RacesScraper:14 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2023/races.html
+2024-01-07 21:09:36 INFO  RacesScraper:19 - OK
+2024-01-07 21:14:49 INFO  RacesScraper:17 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2023/races.html
+2024-01-07 21:14:49 INFO  RacesScraper:22 - OK
+2024-01-07 21:17:13 INFO  RacesScraper:17 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2023/races.html
+2024-01-07 21:17:13 INFO  RacesScraper:22 - OK

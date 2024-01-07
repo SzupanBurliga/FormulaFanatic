@@ -10,10 +10,10 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
-
+import org.apache.logging.log4j.*;
 public class GUI {
     private static BufferedImage image;
-
+    private static final Logger logger = LogManager.getLogger(RacesScraper.class);
     public GUI() {
         SwingUtilities.invokeLater(() -> {
 
@@ -66,7 +66,6 @@ public class GUI {
             JPanel cardPanel = new JPanel(cardLayout);
             JPanel driverDetailsPanel = new JPanel(new CardLayout());
 
-            JLabel test = new JLabel("dupa");
             GridLayout gridLayout = new GridLayout(2,1);
             driverDetailsPanel.setLayout(gridLayout);
             driverDetailsPanel.add(back3);
@@ -150,7 +149,7 @@ public class GUI {
                 JLabel label = new JLabel(icon);
                 panel.add(label);
             } else {
-                System.err.println("Nie udało się wczytać obrazu: " + imageName);
+                logger.error("Nie udało się wczytać obrazu: " + imageName);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -198,7 +197,7 @@ public class GUI {
                     ex.printStackTrace();
                 }
             } else {
-                System.err.println("Błąd przy wczytywaniu obrazu: " + imageName);
+                logger.error("Błąd przy wczytywaniu obrazu: " + imageName);
             }
         }
     }
@@ -263,17 +262,17 @@ public class GUI {
                 d_scraper.getData(driver);
                 driverDetailsPanel.add(buttonPanel,BorderLayout.NORTH);
               //  driverDetailsPanel.add(image);
-                JLabel text0 = new JLabel("Imię i nazwisko ");
-                JLabel text1 = new JLabel("Drużyna ");
-                JLabel text2 = new JLabel("Kraj ");
-                JLabel text3 = new JLabel("Ilość podium ");
-                JLabel text4 = new JLabel("Suma punktów ");
-                JLabel text5 = new JLabel("Udział w Grand Prix ");
-                JLabel text6 = new JLabel("Mistrzostwa świata ");
-                JLabel text7 = new JLabel("Najwyższe miejsce pod koniec");
-                JLabel text8 = new JLabel("Najwyższa pozycja ");
-                JLabel text9 = new JLabel("Data urodzenia ");
-                JLabel text10 = new JLabel("Miejsce urodzenia ");
+                JLabel text0 = new JLabel("Name ");
+                JLabel text1 = new JLabel("Team ");
+                JLabel text2 = new JLabel("Country ");
+                JLabel text3 = new JLabel("Podiums ");
+                JLabel text4 = new JLabel("Points ");
+                JLabel text5 = new JLabel("Grand Prix entered ");
+                JLabel text6 = new JLabel("World Championships ");
+                JLabel text7 = new JLabel("Highest race finish");
+                JLabel text8 = new JLabel("Highest grid position ");
+                JLabel text9 = new JLabel("Date of birth ");
+                JLabel text10 = new JLabel("Place of birth ");
                 text0.setFont(fontLabel);
                 text1.setFont(fontLabel);text2.setFont(fontLabel);text3.setFont(fontLabel);text4.setFont(fontLabel);text5.setFont(fontLabel);
                 text6.setFont(fontLabel);text7.setFont(fontLabel);text8.setFont(fontLabel);text9.setFont(fontLabel);text10.setFont(fontLabel);
