@@ -61,6 +61,18 @@ public class GUI {
             teamPanel.setBackground(Color.PINK);
             displayImage(teamPanel, "pobranyplik.jpg");
 
+            JPanel racesPanel = new JPanel();
+            JPanel racesPanel1 = new JPanel();
+            JPanel racesPanel2 = new JPanel();
+            BoxLayout racesLayout = new BoxLayout(racesPanel2,BoxLayout.Y_AXIS);
+            racesPanel2.setLayout(racesLayout);
+
+
+            JLabel text = new JLabel(" RACE RESULTS");
+
+            racesPanel1.add(text,BorderLayout.CENTER);
+            racesPanel.add(racesPanel1);
+            racesPanel.add(racesPanel2);
 
             CardLayout cardLayout = new CardLayout();
             JPanel cardPanel = new JPanel(cardLayout);
@@ -70,12 +82,10 @@ public class GUI {
             driverDetailsPanel.setLayout(gridLayout);
             driverDetailsPanel.add(back3);
 
-
-
-
             cardPanel.add(photoPanel, "photo");
             cardPanel.add(driverPanel, "driver");
             cardPanel.add(teamPanel, "teams");
+            cardPanel.add(racesPanel,"races");
             // Create a new panel for driver details using CardLayout
             cardPanel.add(driverDetailsPanel, "driverDetails");
 
@@ -84,7 +94,8 @@ public class GUI {
 
             JPanel buttonPanel = new JPanel();
             JButton kierowcy = new JButton("Kierowcy");
-            JButton druzyny = new JButton(("Drużyny"));
+            JButton druzyny = new JButton("Drużyny");
+            JButton tabela = new JButton("Tabela");
             buttonPanel.setBackground(Color.BLACK);
 
             mainPanel.add(cardPanel, BorderLayout.CENTER);
@@ -92,6 +103,7 @@ public class GUI {
 
             buttonPanel.add(kierowcy);
             buttonPanel.add(druzyny);
+            buttonPanel.add(tabela);
 
             frame.setResizable(false);
             frame.add(mainPanel);
@@ -100,6 +112,12 @@ public class GUI {
 
             buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER, horizontalGap, verticalGap));
 
+            tabela.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    cardLayout.show(cardPanel, "races");
+                }
+            });
             back.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -133,6 +151,7 @@ public class GUI {
                     cardLayout.show(cardPanel, "teams");
                 }
             });
+
         });
 
     }
@@ -222,8 +241,6 @@ public class GUI {
         }
             if (!panelExists) {
                 // Jeśli panel nie istnieje, tworzymy nowy
-
-                System.out.println(driver);
                 JPanel driverDetailsPanel = new JPanel();
                 JPanel driverText = new JPanel();
                 driverText.setLayout(new GridLayout(12,2));
@@ -311,7 +328,13 @@ public class GUI {
 
     }
 
+    public static void races() {
+        JLabel races = new JLabel();
+        RacesScraper race = new RacesScraper();
+        race.getData("2023");
 
+
+    }
         public static void main (String[]args){
             GUI gui = new GUI();
 
