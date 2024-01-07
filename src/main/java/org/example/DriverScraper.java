@@ -12,7 +12,7 @@ import org.apache.logging.log4j.*;
 public class DriverScraper {
     private static final Logger logger = LogManager.getLogger(DriverScraper.class);
     static Document doc;
-    static Map<String, String> driverData = new HashMap<>();
+    public static Map<String, String> driverData = new HashMap<>();
 
     public static void getData(String driver) {
         String url = "https://www.formula1.com/en/drivers/" + driver + ".html";

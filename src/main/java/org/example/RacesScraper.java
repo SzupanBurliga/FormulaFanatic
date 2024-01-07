@@ -4,10 +4,13 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.logging.log4j.*;
 
-public class Formula1Scraper {
-    private static final Logger logger = LogManager.getLogger(Formula1Scraper.class);
+public class RacesScraper {
+    private static final Logger logger = LogManager.getLogger(RacesScraper.class);
     static Document doc;
     public static void getData(String year) {
         String url = "https://www.formula1.com/en/results.html/"+year+"/races.html";
@@ -28,8 +31,10 @@ public class Formula1Scraper {
         }
 
     }
+  /*
     public static void main(String[] args) {
-        Formula1Scraper test = new Formula1Scraper();
+        RacesScraper.getData("2023");
+        System.out.println(raceData[2]);
     }
 */
 }

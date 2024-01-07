@@ -159,9 +159,8 @@ public class GUI {
 
 
     private void driver(JPanel panel, CardLayout cardLayout, JPanel cardPanel, JPanel driverPanel) {
-        String[] lista = {"1max", "2perez", "3leclerc", "4sainz", "5russel", "6hamilton", "7ocon", "8gasly", "9norris", "10piastri",
-                "11bottas", "12zhou", "13alonso", "14stroll", "15magnussen", "16hulkenberg", "17albon", "18sargeant",
-                "19tsunoda", "20ricciardo"};
+        String[] lista = {"max-verstappen", "sergio-perez", "charles-leclerc", "carlos-sainz", "george-russell", "lewis-hamilton", "esteban-ocon", "pierre-gasly", "lando-norris", "oscar-piastri",
+                "valtteri-bottas", "guanyu-zhou", "fernando-alonso", "lance-stroll", "kevin-magnussen", "nico-hulkenberg", "alexander-albon", "logan-sargeant", "yuki-tsunoda", "daniel-ricciardo"};
 
         for (int i = 0; i < 20; i++) {
 
@@ -204,9 +203,10 @@ public class GUI {
         }
     }
 
-    private static void teams() {
+    private static void teamsInfo() {
 
     }
+
 
     private static void driverInfo(String driver, JPanel driverPanel, JPanel cardPanel, CardLayout cardLayout, Image originalImage) {
         // Sprawdzamy, czy panel już istnieje w rodzicielskim panelu
@@ -221,8 +221,6 @@ public class GUI {
                 }
             }
         }
-
-
             if (!panelExists) {
                 // Jeśli panel nie istnieje, tworzymy nowy
 
@@ -317,10 +315,6 @@ public class GUI {
 
         public static void main (String[]args){
             GUI gui = new GUI();
-            teams();
-            DriverScraper hamilton = new DriverScraper();
-            hamilton.getData("lewis-hamilton");
-            System.out.println(hamilton.driverData.get("birth_date"));
 
         }
     }
