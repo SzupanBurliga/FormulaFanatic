@@ -390,3 +390,30 @@
 2024-01-07 21:21:30 INFO  RacesScraper:22 - OK
 2024-01-07 21:29:41 INFO  RacesScraper:17 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2023/races.html
 2024-01-07 21:29:42 INFO  RacesScraper:22 - OK
+2024-01-07 21:58:01 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/max-verstappen.html
+2024-01-07 21:58:06 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/valtteri-bottas.html
+2024-01-07 21:58:12 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/nico-hulkenberg.html
+2024-01-08 14:04:47 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/max-verstappen.html
+2024-01-08 14:08:02 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/max-verstappen.html
+2024-01-08 14:08:02 ERROR RacesScraper:171 - Nie udało się wczytać obrazu: max-verstappen
+2024-01-08 14:09:02 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/max-verstappen.html
+2024-01-08 14:09:02 ERROR RacesScraper:171 - Nie udało się wczytać obrazu: max-verstappen.jpg
+2024-01-08 14:18:16 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/max-verstappen.html
+2024-01-08 14:20:04 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/max-verstappen.html
+2024-01-08 14:20:11 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/oscar-piastri.html
+2024-01-08 14:20:27 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/lewis-hamilton.html
+2024-01-08 14:20:38 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/lando-norris.html
+2024-01-08 14:21:06 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/yuki-tsunoda.html
+2024-01-08 14:43:34 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/max-verstappen.html
+2024-01-08 14:49:44 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/max-verstappen.html
+2024-01-08 14:56:34 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/max-verstappen.html
+2024-01-08 14:57:28 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/max-verstappen.html
+2024-01-08 14:58:28 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/max-verstappen.html
+2024-01-08 15:05:22 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/max-verstappen.html
+2024-01-08 15:08:28 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/max-verstappen.html
+2024-01-08 15:09:16 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/max-verstappen.html
+2024-01-08 15:09:30 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/max-verstappen.html
+2024-01-08 15:11:44 INFO  RacesScraper:17 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2023/races.html
+2024-01-08 15:11:44 INFO  RacesScraper:22 - OK
+2024-01-08 15:12:10 INFO  RacesScraper:17 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2010/races.html
+2024-01-08 15:12:10 INFO  RacesScraper:22 - OK

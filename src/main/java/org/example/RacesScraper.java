@@ -31,10 +31,4 @@ public class RacesScraper {
 
     }
 
-    public static void main(String[] args) {
-        RacesScraper race = new RacesScraper();
-        race.getData("2023");
-
-    }
-
 }

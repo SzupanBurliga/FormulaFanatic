@@ -163,10 +163,10 @@ public class GUI {
             InputStream inputStream = classLoader.getResourceAsStream(imageName);
 
             if (inputStream != null) {
-                image = ImageIO.read(inputStream);
+                BufferedImage image = ImageIO.read(inputStream);
                 ImageIcon icon = new ImageIcon(image);
                 JLabel label = new JLabel(icon);
-                panel.add(label);
+                panel.add(label, BorderLayout.NORTH);
             } else {
                 logger.error("Nie udało się wczytać obrazu: " + imageName);
             }
@@ -208,7 +208,7 @@ public class GUI {
 
                             // Switch to the new driver details panel
                             cardLayout.show(cardPanel, "driverDetails");
-                            driverInfo(currentDriver, driverPanel, cardPanel, cardLayout,originalImage);
+                            driverInfo(currentDriver, driverPanel, cardPanel, cardLayout);
                         }
                     });
 
@@ -226,7 +226,7 @@ public class GUI {
     }
 
 
-    private static void driverInfo(String driver, JPanel driverPanel, JPanel cardPanel, CardLayout cardLayout, Image originalImage) {
+    private static void driverInfo(String driver, JPanel driverPanel, JPanel cardPanel, CardLayout cardLayout) {
         // Sprawdzamy, czy panel już istnieje w rodzicielskim panelu
         boolean panelExists = false;
         Component[] components = cardPanel.getComponents();
@@ -240,21 +240,29 @@ public class GUI {
             }
         }
             if (!panelExists) {
-                // Jeśli panel nie istnieje, tworzymy nowy
-                JPanel driverDetailsPanel = new JPanel();
-                JPanel driverText = new JPanel();
-                driverText.setLayout(new GridLayout(12,2));
-                driverDetailsPanel.add(driverText,BorderLayout.SOUTH);
-                driverDetailsPanel.setName(driver);
-                // Ustawienie nazwy kierowcy jako identyfikatora panelu
-                driverDetailsPanel.setLayout(new GridLayout(2, 1));
-
-                JLabel image = new JLabel("test");
-                image.setBackground(Color.RED);
-
                 JButton backButton = new JButton("Powrót do listy kierowców");
                 JPanel buttonPanel = new JPanel();
                 buttonPanel.add(backButton);
+
+
+                // Jeśli panel nie istnieje, tworzymy nowy
+                JPanel driverDetailsPanel = new JPanel();
+                driverDetailsPanel.add(buttonPanel,BorderLayout.NORTH);
+                JPanel driverText = new JPanel();
+                driverText.setLayout(new GridLayout(12,2));
+                String photoName = driver + ".png";
+                JPanel infoPanel = new JPanel();
+                infoPanel.setLayout(new GridLayout(1,2));
+                displayImage(infoPanel,photoName);
+                infoPanel.add(driverText,BorderLayout.SOUTH);
+                driverDetailsPanel.add(infoPanel);
+                driverDetailsPanel.setName(driver);
+
+                // Ustawienie nazwy kierowcy jako identyfikatora panelu
+                driverDetailsPanel.setLayout(new GridLayout(2, 1));
+
+
+
                 backButton.setSize(50,100);
                 Font fontLabel = new Font("Arial", Font.BOLD, 18);
                 Font fontInfo = new Font("Arial",Font.PLAIN,18);
@@ -275,9 +283,10 @@ public class GUI {
                         cardLayout.show(cardPanel, "driver"); // Przełączanie do panelu z listą kierowców
                     }
                 });
+
                 DriverScraper d_scraper = new DriverScraper();
                 d_scraper.getData(driver);
-                driverDetailsPanel.add(buttonPanel,BorderLayout.NORTH);
+
               //  driverDetailsPanel.add(image);
                 JLabel text0 = new JLabel("Name ");
                 JLabel text1 = new JLabel("Team ");
@@ -308,7 +317,6 @@ public class GUI {
                 team.setFont(fontInfo);country.setFont(fontInfo);podiums.setFont(fontInfo);points.setFont(fontInfo);grand_prix_entered.setFont(fontInfo);
                 world_champ.setFont(fontInfo);highest_finish.setFont(fontInfo);highest_position.setFont(fontInfo);birth_date.setFont(fontInfo);birth_place.setFont(fontInfo);
 
-
                 driverText.add(text0);driverText.add(name);
                 driverText.add(text1);driverText.add(team);driverText.add(text2);driverText.add(country);driverText.add(text3);
                 driverText.add(podiums);driverText.add(text4);driverText.add(points);driverText.add(text5);driverText.add(grand_prix_entered);
@@ -331,12 +339,14 @@ public class GUI {
     public static void races() {
         JLabel races = new JLabel();
         RacesScraper race = new RacesScraper();
-        race.getData("2023");
+        race.getData("2010");
+        String[] array;
 
 
     }
         public static void main (String[]args){
             GUI gui = new GUI();
+            races();
 
         }
     }
