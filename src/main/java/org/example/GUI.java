@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 import java.util.Objects;
 import org.apache.logging.log4j.*;
 public class GUI {
@@ -253,13 +254,15 @@ public class GUI {
                 String photoName = driver + ".png";
                 JPanel infoPanel = new JPanel();
                 infoPanel.setLayout(new GridLayout(1,2));
+                infoPanel.setPreferredSize(new Dimension(500,500));
                 displayImage(infoPanel,photoName);
                 infoPanel.add(driverText,BorderLayout.SOUTH);
+
                 driverDetailsPanel.add(infoPanel);
                 driverDetailsPanel.setName(driver);
 
                 // Ustawienie nazwy kierowcy jako identyfikatora panelu
-                driverDetailsPanel.setLayout(new GridLayout(2, 1));
+                driverDetailsPanel.setLayout(new BoxLayout(driverDetailsPanel,BoxLayout.Y_AXIS));
 
 
 
@@ -288,6 +291,8 @@ public class GUI {
                 d_scraper.getData(driver);
 
               //  driverDetailsPanel.add(image);
+                JPanel puste = new JPanel();
+                JPanel puste2 = new JPanel();
                 JLabel text0 = new JLabel("Name ");
                 JLabel text1 = new JLabel("Team ");
                 JLabel text2 = new JLabel("Country ");
@@ -322,6 +327,7 @@ public class GUI {
                 driverText.add(podiums);driverText.add(text4);driverText.add(points);driverText.add(text5);driverText.add(grand_prix_entered);
                 driverText.add(text6);driverText.add(world_champ);driverText.add(text7);driverText.add(highest_finish);driverText.add(text8);
                 driverText.add(highest_position);driverText.add(text9);driverText.add(birth_date);driverText.add(text10);driverText.add(birth_place);
+                driverText.add(puste); driverText.add(puste2);
 
 
 
@@ -336,17 +342,18 @@ public class GUI {
 
     }
 
-    public static void races() {
-        JLabel races = new JLabel();
-        RacesScraper race = new RacesScraper();
-        race.getData("2010");
-        String[] array;
+    public static void races(String year) {
+        List<Race> races = RacesScraper.getData(year);
+        System.out.println(races.get(0).country());
+        System.out.println(races.get(0).date());
+
+
 
 
     }
         public static void main (String[]args){
             GUI gui = new GUI();
-            races();
+            races("2023");
 
         }
     }
