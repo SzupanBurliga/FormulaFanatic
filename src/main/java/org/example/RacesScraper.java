@@ -2,8 +2,10 @@ package org.example;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import java.io.IOException;
+import java.util.List;
 import java.util.ArrayList;
 
 import org.apache.logging.log4j.*;
@@ -44,6 +46,7 @@ public class RacesScraper {
         } catch (IOException e) {
             logger.error("Błąd Scrapera, nie pobrano informacji z: "+ url);
         }
+        return races;
 
     }
 
