@@ -62,18 +62,21 @@ public class GUI {
             teamPanel.setBackground(Color.PINK);
             displayImage(teamPanel, "pobranyplik.jpg");
 
+
+            String year;
+            year = "2023";
             JPanel racesPanel = new JPanel();
             JPanel racesPanel1 = new JPanel();
             JPanel racesPanel2 = new JPanel();
-            BoxLayout racesLayout = new BoxLayout(racesPanel2,BoxLayout.Y_AXIS);
-            racesPanel2.setLayout(racesLayout);
+            BoxLayout racesLayout = new BoxLayout(racesPanel,BoxLayout.Y_AXIS);
 
-
-            JLabel text = new JLabel(" RACE RESULTS");
-
+            racesPanel.setLayout(racesLayout);
+            racesPanel1.setLayout(new GridLayout(1,1));
+            JLabel text = new JLabel(year + " RACE RESULTS");
             racesPanel1.add(text,BorderLayout.CENTER);
             racesPanel.add(racesPanel1);
             racesPanel.add(racesPanel2);
+            races(year,racesPanel2);
 
             CardLayout cardLayout = new CardLayout();
             JPanel cardPanel = new JPanel(cardLayout);
@@ -342,18 +345,51 @@ public class GUI {
 
     }
 
-    public static void races(String year) {
+    public static void races(String year,JPanel panel) {
         List<Race> races = RacesScraper.getData(year);
+
         System.out.println(races.get(0).country());
-        System.out.println(races.get(0).date());
+        System.out.println(races.toArray().length);
+        JPanel upperPanel = new JPanel();
+        upperPanel.setLayout(new GridLayout(1,7));
+        JLabel text0 = new JLabel("Grand Prix");
+        JLabel text1 = new JLabel("Date");
+        JLabel text2 = new JLabel("Winner");
+        JLabel text3 = new JLabel("Car");
+        JLabel text7 = new JLabel("  ");
+        JLabel text4 = new JLabel("Laps");
+        JLabel text5 = new JLabel("Time");
+        upperPanel.add(text0);upperPanel.add(text1);upperPanel.add(text2);upperPanel.add(text3); upperPanel.add(text7);upperPanel.add(text4);upperPanel.add(text5);
+        //panel.add(upperPanel);
+        String[][] data = new String[races.size()][6];
+        for(int i=0; i < races.toArray().length; i++) {
+            JPanel singleRace = new JPanel();
 
+            String country = races.get(i).country();
+            String date = races.get(i).date();
+            String driver = races.get(i).driver();
+            String team = races.get(i).team();
+            String laps = races.get(i).laps();
+            String time = races.get(i).time();
+            data[i][0] = country;
+            data[i][1] = date;
+            data[i][2] = driver;
+            data[i][3] = team;
+            data[i][4] = laps;
+            data[i][5] = time;
 
+        }
 
+        String[] colNames = {"Grand Prix","Date","Winner","Car","Laps","Time"};
+
+        JTable table = new JTable(data,colNames);
+        JScrollPane scrollPane = new JScrollPane(table);
+        panel.add(scrollPane);
 
     }
         public static void main (String[]args){
             GUI gui = new GUI();
-            races("2023");
+
 
         }
     }
