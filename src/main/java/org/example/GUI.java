@@ -126,8 +126,12 @@ public class GUI {
             JButton kierowcy = new JButton("Drivers 2023");
             JButton druzyny = new JButton("Teams 2023");
             JButton tabela = new JButton("Season Race Results");
-            kierowcy.setFont(buttonFont);druzyny.setFont(buttonFont);tabela.setFont(buttonFont);
-            kierowcy.setPreferredSize(rozmiar);druzyny.setPreferredSize(rozmiar);tabela.setPreferredSize(rozmiar);
+            kierowcy.setFont(buttonFont);
+            druzyny.setFont(buttonFont);
+            tabela.setFont(buttonFont);
+            kierowcy.setPreferredSize(rozmiar);
+            druzyny.setPreferredSize(rozmiar);
+            tabela.setPreferredSize(rozmiar);
 
             buttonPanel.setBackground(Color.BLACK);
 
@@ -300,9 +304,28 @@ public class GUI {
         panel.setLayout(new FlowLayout());
         panel.add(drivers);
 
-        team.add(text0);team.add(fullName); team.add(text1);team.add(base);team.add(text2); team.add(teamChief); team.add(text3);team.add(techChief);
-        team.add(text4);team.add(chassis);team.add(text5); team.add(powerUnit);team.add(text6); team.add(firstEntry);team.add(text7);
-        team.add(worldChamp);team.add(text8); team.add(highFin);team.add(text9);team.add(polePos);team.add(text10); team.add(fastLap);
+        team.add(text0);
+        team.add(fullName);
+        team.add(text1);
+        team.add(base);
+        team.add(text2);
+        team.add(teamChief);
+        team.add(text3);
+        team.add(techChief);
+        team.add(text4);
+        team.add(chassis);
+        team.add(text5);
+        team.add(powerUnit);
+        team.add(text6);
+        team.add(firstEntry);
+        team.add(text7);
+        team.add(worldChamp);
+        team.add(text8);
+        team.add(highFin);
+        team.add(text9);
+        team.add(polePos);
+        team.add(text10);
+        team.add(fastLap);
         panel.add(team);
 
 
@@ -387,8 +410,16 @@ public class GUI {
                 JLabel text9 = new JLabel("Date of birth ");
                 JLabel text10 = new JLabel("Place of birth ");
                 text0.setFont(fontLabel);
-                text1.setFont(fontLabel);text2.setFont(fontLabel);text3.setFont(fontLabel);text4.setFont(fontLabel);text5.setFont(fontLabel);
-                text6.setFont(fontLabel);text7.setFont(fontLabel);text8.setFont(fontLabel);text9.setFont(fontLabel);text10.setFont(fontLabel);
+                text1.setFont(fontLabel);
+                text2.setFont(fontLabel);
+                text3.setFont(fontLabel);
+                text4.setFont(fontLabel);
+                text5.setFont(fontLabel);
+                text6.setFont(fontLabel);
+                text7.setFont(fontLabel);
+                text8.setFont(fontLabel);
+                text9.setFont(fontLabel);
+                text10.setFont(fontLabel);
                 JLabel name = new JLabel(formattedName.toString());
                 JLabel team = new JLabel(d_scraper.driverData.get("team"));
                 JLabel country = new JLabel(d_scraper.driverData.get("country"));
@@ -401,15 +432,41 @@ public class GUI {
                 JLabel birth_date = new JLabel(d_scraper.driverData.get("birth_date"));
                 JLabel birth_place = new JLabel(d_scraper.driverData.get("birth_place"));
                 name.setFont(fontInfo);
-                team.setFont(fontInfo);country.setFont(fontInfo);podiums.setFont(fontInfo);points.setFont(fontInfo);grand_prix_entered.setFont(fontInfo);
-                world_champ.setFont(fontInfo);highest_finish.setFont(fontInfo);highest_position.setFont(fontInfo);birth_date.setFont(fontInfo);birth_place.setFont(fontInfo);
+                team.setFont(fontInfo);
+                country.setFont(fontInfo);
+                podiums.setFont(fontInfo);
+                points.setFont(fontInfo);
+                grand_prix_entered.setFont(fontInfo);
+                world_champ.setFont(fontInfo);
+                highest_finish.setFont(fontInfo);
+                highest_position.setFont(fontInfo);
+                birth_date.setFont(fontInfo);
+                birth_place.setFont(fontInfo);
                 //driverText.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
-                driverText.add(text0);driverText.add(name);
-                driverText.add(text1);driverText.add(team);driverText.add(text2);driverText.add(country);driverText.add(text3);
-                driverText.add(podiums);driverText.add(text4);driverText.add(points);driverText.add(text5);driverText.add(grand_prix_entered);
-                driverText.add(text6);driverText.add(world_champ);driverText.add(text7);driverText.add(highest_finish);driverText.add(text8);
-                driverText.add(highest_position);driverText.add(text9);driverText.add(birth_date);driverText.add(text10);driverText.add(birth_place);
-                driverText.add(puste); driverText.add(puste2);
+                driverText.add(text0);
+                driverText.add(name);
+                driverText.add(text1);
+                driverText.add(team);
+                driverText.add(text2);
+                driverText.add(country);
+                driverText.add(text3);
+                driverText.add(podiums);
+                driverText.add(text4);
+                driverText.add(points);
+                driverText.add(text5);
+                driverText.add(grand_prix_entered);
+                driverText.add(text6);
+                driverText.add(world_champ);
+                driverText.add(text7);
+                driverText.add(highest_finish);
+                driverText.add(text8);
+                driverText.add(highest_position);
+                driverText.add(text9);
+                driverText.add(birth_date);
+                driverText.add(text10);
+                driverText.add(birth_place);
+                driverText.add(puste);
+                driverText.add(puste2);
 
 
 
