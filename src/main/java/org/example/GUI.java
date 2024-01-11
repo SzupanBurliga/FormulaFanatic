@@ -40,7 +40,7 @@ public class GUI {
             JButton back4 = new JButton("powrut do kierowcow :)");
             back.setFont(font);
             back.setBackground(Color.LIGHT_GRAY);
-            back2.setBackground(Color.RED);
+            back2.setBackground(Color.LIGHT_GRAY);
 
 
 
@@ -64,11 +64,11 @@ public class GUI {
 
             //team panel
             JPanel teamPanel = new JPanel();
-            teamPanel.add(new JLabel("Team info :))"));
+            teamPanel.add(new JLabel("Random team info"));
             teamPanel.add(back2, BorderLayout.CENTER);
-            teamPanel.setBackground(Color.PINK);
-            displayImage(teamPanel, "pobranyplik.jpg");
-
+            teamPanel.setBackground(Color.GRAY);
+           // displayImage(teamPanel, "pobranyplik.jpg");
+            teamsInfo(teamPanel);
             // Input panel for entering the year
 
             JPanel inputPanel = new JPanel();
@@ -83,8 +83,7 @@ public class GUI {
             inputPanel.add(yearSubmitButton);
             inputPanel.setBackground(Color.GRAY);
             String year;
-            year = yearField.getText();
-            year = "2008";
+            year = yearField.getText().toString();
 
             JPanel racesPanel = new JPanel();
             JPanel racesPanel1 = new JPanel();
@@ -120,14 +119,20 @@ public class GUI {
 
             driver(driverMainPanel, cardLayout, cardPanel, driverDetailsPanel);
 
+            Font buttonFont = new Font("Arial", Font.BOLD , 18);
+            Dimension rozmiar = new Dimension(240,65);
             JPanel buttonPanel = new JPanel();
+            buttonPanel.setPreferredSize(new Dimension(1200,100));
             JButton kierowcy = new JButton("Drivers 2023");
             JButton druzyny = new JButton("Teams 2023");
             JButton tabela = new JButton("Season Race Results");
+            kierowcy.setFont(buttonFont);druzyny.setFont(buttonFont);tabela.setFont(buttonFont);
+            kierowcy.setPreferredSize(rozmiar);druzyny.setPreferredSize(rozmiar);tabela.setPreferredSize(rozmiar);
+
             buttonPanel.setBackground(Color.BLACK);
 
             mainPanel.add(cardPanel, BorderLayout.CENTER);
-            mainPanel.add(buttonPanel, BorderLayout.SOUTH);
+            photoPanel.add(buttonPanel, BorderLayout.SOUTH);
 
             buttonPanel.add(kierowcy);
             buttonPanel.add(druzyny);
@@ -263,9 +268,44 @@ public class GUI {
         }
     }
 
-    private static void teamsInfo() {
+    private static void teamsInfo(JPanel panel) {
         TeamScraper t_scraper = new TeamScraper();
-        t_scraper.getData("mercedes");
+        t_scraper.getData("Mercedes");
+        JLabel text0 = new JLabel("Name ");
+        JLabel text1 = new JLabel("Base");
+        JLabel text2 = new JLabel("team_chief ");
+        JLabel text3 = new JLabel("tech_chief ");
+        JLabel text4 = new JLabel("chassis ");
+        JLabel text5 = new JLabel("power_unit ");
+        JLabel text6 = new JLabel("first_entry ");
+        JLabel text7 = new JLabel("world_champ");
+        JLabel text8 = new JLabel("highest_finish ");
+        JLabel text9 = new JLabel("pole_pos ");
+        JLabel text10 = new JLabel("fastest_lap ");
+
+        JLabel fullName = new JLabel(t_scraper.teamData.get("full_name"));
+        JLabel drivers = new JLabel("place for drivers");
+        JLabel base = new JLabel(t_scraper.teamData.get("base"));
+        JLabel teamChief = new JLabel(t_scraper.teamData.get("team_chief"));
+        JLabel techChief = new JLabel(t_scraper.teamData.get("tech_chief"));
+        JLabel chassis = new JLabel(t_scraper.teamData.get("chassis"));
+        JLabel powerUnit = new JLabel(t_scraper.teamData.get("power_unit"));
+        JLabel firstEntry = new JLabel(t_scraper.teamData.get("first_entry"));
+        JLabel worldChamp = new JLabel(t_scraper.teamData.get("world_champ"));
+        JLabel highFin = new JLabel(t_scraper.teamData.get("highest_finish"));
+        JLabel polePos = new JLabel(t_scraper.teamData.get("pole_pos"));
+        JLabel fastLap = new JLabel(t_scraper.teamData.get("fastest_lap"));
+        JPanel team = new JPanel();
+        team.setLayout(new GridLayout(12,2));
+        panel.setLayout(new FlowLayout());
+        panel.add(drivers);
+
+        team.add(text0);team.add(fullName); team.add(text1);team.add(base);team.add(text2); team.add(teamChief); team.add(text3);team.add(techChief);
+        team.add(text4);team.add(chassis);team.add(text5); team.add(powerUnit);team.add(text6); team.add(firstEntry);team.add(text7);
+        team.add(worldChamp);team.add(text8); team.add(highFin);team.add(text9);team.add(polePos);team.add(text10); team.add(fastLap);
+        panel.add(team);
+
+
     }
 
 
@@ -435,6 +475,7 @@ public class GUI {
 
         JTable table = new JTable(data, colNames);
         table.setPreferredSize(new Dimension(780, 400));
+        table.setEnabled(false);
 
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setPreferredSize(new Dimension(780, 400)); // Set the preferred size of the scroll pane
