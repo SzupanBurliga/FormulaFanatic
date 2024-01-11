@@ -12,6 +12,7 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Objects;
 import org.apache.logging.log4j.*;
+
 public class GUI {
     private static BufferedImage image;
     private static final Logger logger = LogManager.getLogger(RacesScraper.class);
@@ -32,12 +33,18 @@ public class GUI {
             int verticalGap = 5;
 
             Font font = new Font("Arial", Font.BOLD | Font.ITALIC, 18);
+            Font title = new Font("Arial", Font.BOLD | Font.ITALIC, 26);
             JButton back = new JButton("Menu Główne");
             JButton back2 = new JButton("Menu Główne");
-            JButton back3 = new JButton("powrut do kierowcow :)");
+            JButton back3 = new JButton("Menu Główne");
+            JButton back4 = new JButton("powrut do kierowcow :)");
             back.setFont(font);
             back.setBackground(Color.LIGHT_GRAY);
             back2.setBackground(Color.RED);
+
+
+
+
             // drivers panels
             JPanel driverMainPanel = new JPanel();
             driverMainPanel.setBackground(Color.BLACK);
@@ -62,21 +69,38 @@ public class GUI {
             teamPanel.setBackground(Color.PINK);
             displayImage(teamPanel, "pobranyplik.jpg");
 
+            // Input panel for entering the year
 
+            JPanel inputPanel = new JPanel();
+            JTextField yearField = new JTextField(4); // Adjust the size as needed
+            JButton yearSubmitButton = new JButton("Submit Year");
+
+
+
+
+            inputPanel.add(new JLabel("Enter Year: "));
+            inputPanel.add(yearField);
+            inputPanel.add(yearSubmitButton);
+            inputPanel.setBackground(Color.GRAY);
             String year;
-            year = "2023";
+            year = yearField.getText();
+            year = "2008";
+
             JPanel racesPanel = new JPanel();
             JPanel racesPanel1 = new JPanel();
             JPanel racesPanel2 = new JPanel();
             BoxLayout racesLayout = new BoxLayout(racesPanel,BoxLayout.Y_AXIS);
 
             racesPanel.setLayout(racesLayout);
-            racesPanel1.setLayout(new GridLayout(1,1));
+            racesPanel1.setLayout(new GridLayout(2,1));
             JLabel text = new JLabel(year + " RACE RESULTS");
+            text.setFont(title);
+            racesPanel2.setBackground(Color.RED);
+            racesPanel1.add(inputPanel, BorderLayout.NORTH);
             racesPanel1.add(text,BorderLayout.CENTER);
             racesPanel.add(racesPanel1);
             racesPanel.add(racesPanel2);
-            races(year,racesPanel2);
+            races(year,racesPanel2,back3);
 
             CardLayout cardLayout = new CardLayout();
             JPanel cardPanel = new JPanel(cardLayout);
@@ -84,7 +108,7 @@ public class GUI {
 
             GridLayout gridLayout = new GridLayout(2,1);
             driverDetailsPanel.setLayout(gridLayout);
-            driverDetailsPanel.add(back3);
+            driverDetailsPanel.add(back4);
 
             cardPanel.add(photoPanel, "photo");
             cardPanel.add(driverPanel, "driver");
@@ -97,9 +121,9 @@ public class GUI {
             driver(driverMainPanel, cardLayout, cardPanel, driverDetailsPanel);
 
             JPanel buttonPanel = new JPanel();
-            JButton kierowcy = new JButton("Kierowcy");
-            JButton druzyny = new JButton("Drużyny");
-            JButton tabela = new JButton("Tabela");
+            JButton kierowcy = new JButton("Drivers 2023");
+            JButton druzyny = new JButton("Teams 2023");
+            JButton tabela = new JButton("Season Race Results");
             buttonPanel.setBackground(Color.BLACK);
 
             mainPanel.add(cardPanel, BorderLayout.CENTER);
@@ -115,6 +139,14 @@ public class GUI {
 
 
             buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER, horizontalGap, verticalGap));
+
+            yearSubmitButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+
+
+                }
+            });
 
             tabela.addActionListener(new ActionListener() {
                 @Override
@@ -136,6 +168,12 @@ public class GUI {
                 }
             });
             back3.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    cardLayout.show(cardPanel, "photo");
+                }
+            });
+            back4.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     cardLayout.show(cardPanel, "driver");
@@ -226,7 +264,8 @@ public class GUI {
     }
 
     private static void teamsInfo() {
-
+        TeamScraper t_scraper = new TeamScraper();
+        t_scraper.getData("mercedes");
     }
 
 
@@ -324,7 +363,7 @@ public class GUI {
                 name.setFont(fontInfo);
                 team.setFont(fontInfo);country.setFont(fontInfo);podiums.setFont(fontInfo);points.setFont(fontInfo);grand_prix_entered.setFont(fontInfo);
                 world_champ.setFont(fontInfo);highest_finish.setFont(fontInfo);highest_position.setFont(fontInfo);birth_date.setFont(fontInfo);birth_place.setFont(fontInfo);
-
+                //driverText.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
                 driverText.add(text0);driverText.add(name);
                 driverText.add(text1);driverText.add(team);driverText.add(text2);driverText.add(country);driverText.add(text3);
                 driverText.add(podiums);driverText.add(text4);driverText.add(points);driverText.add(text5);driverText.add(grand_prix_entered);
@@ -345,13 +384,13 @@ public class GUI {
 
     }
 
-    public static void races(String year,JPanel panel) {
+    public static void races(String year, JPanel panel, JButton button) {
         List<Race> races = RacesScraper.getData(year);
 
-        System.out.println(races.get(0).country());
-        System.out.println(races.toArray().length);
         JPanel upperPanel = new JPanel();
-        upperPanel.setLayout(new GridLayout(1,7));
+        /*
+        upperPanel.setLayout(new GridLayout(1, 7));
+        Font font = new Font("Arial", Font.BOLD | Font.ITALIC, 16);
         JLabel text0 = new JLabel("Grand Prix");
         JLabel text1 = new JLabel("Date");
         JLabel text2 = new JLabel("Winner");
@@ -359,15 +398,28 @@ public class GUI {
         JLabel text7 = new JLabel("  ");
         JLabel text4 = new JLabel("Laps");
         JLabel text5 = new JLabel("Time");
-        upperPanel.add(text0);upperPanel.add(text1);upperPanel.add(text2);upperPanel.add(text3); upperPanel.add(text7);upperPanel.add(text4);upperPanel.add(text5);
-        //panel.add(upperPanel);
-        String[][] data = new String[races.size()][6];
-        for(int i=0; i < races.toArray().length; i++) {
-            JPanel singleRace = new JPanel();
+        text0.setFont(font);
+        text1.setFont(font);
+        text2.setFont(font);
+        text3.setFont(font);
+        text4.setFont(font);
+        text5.setFont(font);
 
+        upperPanel.setBackground(Color.BLUE);
+        upperPanel.add(text0);
+        upperPanel.add(text1);
+        upperPanel.add(text2);
+        upperPanel.add(text3);
+        upperPanel.add(text7);
+        upperPanel.add(text4);
+        upperPanel.add(text5);
+        */
+
+        String[][] data = new String[races.size()][6];
+        for (int i = 0; i < races.size(); i++) {
             String country = races.get(i).country();
             String date = races.get(i).date();
-            String driver = races.get(i).driver();
+            String driver = races.get(i).driver().substring(0, races.get(i).driver().lastIndexOf(" "));
             String team = races.get(i).team();
             String laps = races.get(i).laps();
             String time = races.get(i).time();
@@ -377,14 +429,20 @@ public class GUI {
             data[i][3] = team;
             data[i][4] = laps;
             data[i][5] = time;
-
         }
 
-        String[] colNames = {"Grand Prix","Date","Winner","Car","Laps","Time"};
+        String[] colNames = {"Grand Prix", "Date", "Winner", "Car", "Laps", "Time"};
 
-        JTable table = new JTable(data,colNames);
+        JTable table = new JTable(data, colNames);
+        table.setPreferredSize(new Dimension(780, 400));
+
         JScrollPane scrollPane = new JScrollPane(table);
-        panel.add(scrollPane);
+        scrollPane.setPreferredSize(new Dimension(780, 400)); // Set the preferred size of the scroll pane
+        upperPanel.add(button,BorderLayout.CENTER);
+        panel.setLayout(new BorderLayout()); // Use BorderLayout for the panel
+        panel.add(scrollPane, BorderLayout.CENTER);
+        panel.add(upperPanel, BorderLayout.SOUTH);
+        panel.setBackground(Color.BLACK);
 
     }
         public static void main (String[]args){
