@@ -755,3 +755,148 @@
 2024-01-11 19:04:06 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
 2024-01-11 19:04:06 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
 2024-01-11 19:04:06 INFO  RacesScraper:25 - OK
+2024-01-11 19:51:09 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 19:51:09 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 19:51:10 INFO  RacesScraper:25 - OK
+2024-01-11 19:51:14 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/lewis-hamilton.html
+2024-01-11 19:51:17 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/daniel-ricciardo.html
+2024-01-11 19:57:05 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 19:57:05 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 19:57:06 INFO  RacesScraper:25 - OK
+2024-01-11 19:57:23 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 19:57:23 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 19:57:23 INFO  RacesScraper:25 - OK
+2024-01-11 19:58:03 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 19:58:03 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 19:58:03 INFO  RacesScraper:25 - OK
+2024-01-11 20:01:31 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 20:01:31 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 20:01:31 INFO  RacesScraper:25 - OK
+2024-01-11 20:02:11 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 20:02:11 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 20:02:11 INFO  RacesScraper:25 - OK
+2024-01-11 20:02:30 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 20:02:30 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 20:02:30 INFO  RacesScraper:25 - OK
+2024-01-11 20:06:49 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 20:06:49 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 20:06:49 INFO  RacesScraper:25 - OK
+2024-01-11 20:06:55 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-11 20:06:55 INFO  RacesScraper:25 - OK
+2024-01-11 20:07:27 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 20:07:27 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 20:07:27 INFO  RacesScraper:25 - OK
+2024-01-11 20:07:32 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-11 20:07:33 INFO  RacesScraper:25 - OK
+2024-01-11 20:07:43 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/202rr/races.html
+2024-01-11 20:07:43 INFO  RacesScraper:25 - OK
+2024-01-11 20:08:19 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2023/races.html
+2024-01-11 20:08:19 INFO  RacesScraper:25 - OK
+2024-01-11 20:08:24 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/1990/races.html
+2024-01-11 20:08:24 INFO  RacesScraper:25 - OK
+2024-01-11 20:08:55 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 20:08:55 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 20:08:55 INFO  RacesScraper:25 - OK
+2024-01-11 20:09:01 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-11 20:09:01 INFO  RacesScraper:25 - OK
+2024-01-11 20:09:07 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-11 20:09:07 INFO  RacesScraper:25 - OK
+2024-01-11 20:10:06 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 20:10:06 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 20:10:06 INFO  RacesScraper:25 - OK
+2024-01-11 20:10:11 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-11 20:10:11 INFO  RacesScraper:25 - OK
+2024-01-11 22:34:16 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 22:34:16 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 22:34:16 INFO  RacesScraper:25 - OK
+2024-01-11 22:34:21 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-11 22:34:22 INFO  RacesScraper:25 - OK
+2024-01-11 22:34:25 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-11 22:34:25 INFO  RacesScraper:25 - OK
+2024-01-11 22:35:12 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 22:35:12 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 22:35:12 INFO  RacesScraper:25 - OK
+2024-01-11 22:35:18 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-11 22:35:18 INFO  RacesScraper:25 - OK
+2024-01-11 22:35:22 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 22:35:22 INFO  RacesScraper:25 - OK
+2024-01-11 22:38:21 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 22:38:21 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 22:38:21 INFO  RacesScraper:25 - OK
+2024-01-11 22:38:25 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-11 22:38:25 INFO  RacesScraper:25 - OK
+2024-01-11 22:44:02 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 22:44:02 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 22:44:02 INFO  RacesScraper:25 - OK
+2024-01-11 22:44:08 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/charles-leclerc.html
+2024-01-11 22:44:12 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/guanyu-zhou.html
+2024-01-11 22:44:14 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/max-verstappen.html
+2024-01-11 22:56:58 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 22:56:58 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 22:56:59 INFO  RacesScraper:25 - OK
+2024-01-11 22:57:04 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 22:57:04 INFO  RacesScraper:25 - OK
+2024-01-11 22:57:05 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 22:57:05 INFO  RacesScraper:25 - OK
+2024-01-11 22:57:22 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 22:57:22 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 22:57:22 INFO  RacesScraper:25 - OK
+2024-01-11 22:57:27 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 22:57:27 INFO  RacesScraper:25 - OK
+2024-01-11 22:57:28 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 22:57:28 INFO  RacesScraper:25 - OK
+2024-01-11 22:57:29 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 22:57:29 INFO  RacesScraper:25 - OK
+2024-01-11 22:58:15 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 22:58:15 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 22:58:15 INFO  RacesScraper:25 - OK
+2024-01-11 22:58:20 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 22:58:20 INFO  RacesScraper:25 - OK
+2024-01-11 22:59:23 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 22:59:23 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 22:59:23 INFO  RacesScraper:25 - OK
+2024-01-11 22:59:39 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 22:59:39 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 22:59:39 INFO  RacesScraper:25 - OK
+2024-01-11 22:59:44 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-11 22:59:44 INFO  RacesScraper:25 - OK
+2024-01-11 22:59:45 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-11 22:59:45 INFO  RacesScraper:25 - OK
+2024-01-11 22:59:51 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/3/races.html
+2024-01-11 22:59:51 INFO  RacesScraper:25 - OK
+2024-01-11 23:02:07 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 23:02:07 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 23:02:08 INFO  RacesScraper:25 - OK
+2024-01-11 23:02:13 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-11 23:02:13 INFO  RacesScraper:25 - OK
+2024-01-11 23:02:19 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-11 23:02:20 INFO  RacesScraper:25 - OK
+2024-01-11 23:02:27 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 23:02:27 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 23:02:27 INFO  RacesScraper:25 - OK
+2024-01-11 23:02:34 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-11 23:02:34 INFO  RacesScraper:25 - OK
+2024-01-11 23:09:58 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 23:09:58 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 23:09:58 INFO  RacesScraper:25 - OK
+2024-01-11 23:10:03 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-11 23:10:03 INFO  RacesScraper:25 - OK
+2024-01-11 23:10:19 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 23:10:19 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 23:10:19 INFO  RacesScraper:25 - OK
+2024-01-11 23:10:25 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-11 23:10:25 INFO  RacesScraper:25 - OK
+2024-01-11 23:16:50 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 23:16:50 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 23:16:50 INFO  RacesScraper:25 - OK
+2024-01-11 23:16:56 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-11 23:16:56 INFO  RacesScraper:25 - OK
+2024-01-11 23:17:54 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 23:17:54 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 23:17:54 INFO  RacesScraper:25 - OK
+2024-01-11 23:17:59 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html/2020/races.html
+2024-01-11 23:17:59 INFO  RacesScraper:25 - OK
+2024-01-11 23:31:04 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/teams/Mercedes.html
+2024-01-11 23:31:04 INFO  RacesScraper:20 - Scrapowanie informacji z: https://www.formula1.com/en/results.html//races.html
+2024-01-11 23:31:04 INFO  RacesScraper:25 - OK
+2024-01-11 23:31:14 INFO  DriverScraper:24 - Scrapowanie informacji z: https://www.formula1.com/en/drivers/lewis-hamilton.html

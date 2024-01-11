@@ -6,7 +6,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -70,20 +69,16 @@ public class GUI {
            // displayImage(teamPanel, "pobranyplik.jpg");
             teamsInfo(teamPanel);
             // Input panel for entering the year
-
+            //-------------tabela-----------------
             JPanel inputPanel = new JPanel();
             JTextField yearField = new JTextField(4); // Adjust the size as needed
             JButton yearSubmitButton = new JButton("Submit Year");
-
-
-
 
             inputPanel.add(new JLabel("Enter Year: "));
             inputPanel.add(yearField);
             inputPanel.add(yearSubmitButton);
             inputPanel.setBackground(Color.GRAY);
-            String year;
-            year = yearField.getText().toString();
+            String year = yearField.getText().toString();
 
             JPanel racesPanel = new JPanel();
             JPanel racesPanel1 = new JPanel();
@@ -99,7 +94,7 @@ public class GUI {
             racesPanel1.add(text,BorderLayout.CENTER);
             racesPanel.add(racesPanel1);
             racesPanel.add(racesPanel2);
-            races(year,racesPanel2,back3);
+            racesInfo(year,racesPanel2,back3);
 
             CardLayout cardLayout = new CardLayout();
             JPanel cardPanel = new JPanel(cardLayout);
@@ -152,8 +147,9 @@ public class GUI {
             yearSubmitButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-
-
+                //racesInfo(yearField.getText().toString(), racesPanel2,back3);
+                //racesPanel2.revalidate();
+                //racesPanel2.repaint();
                 }
             });
 
@@ -481,7 +477,7 @@ public class GUI {
 
     }
 
-    public static void races(String year, JPanel panel, JButton button) {
+    public static void racesInfo(String year, JPanel panel, JButton button) {
         List<Race> races = RacesScraper.getData(year);
 
         JPanel upperPanel = new JPanel();
@@ -514,18 +510,12 @@ public class GUI {
 
         String[][] data = new String[races.size()][6];
         for (int i = 0; i < races.size(); i++) {
-            String country = races.get(i).country();
-            String date = races.get(i).date();
-            String driver = races.get(i).driver().substring(0, races.get(i).driver().lastIndexOf(" "));
-            String team = races.get(i).team();
-            String laps = races.get(i).laps();
-            String time = races.get(i).time();
-            data[i][0] = country;
-            data[i][1] = date;
-            data[i][2] = driver;
-            data[i][3] = team;
-            data[i][4] = laps;
-            data[i][5] = time;
+            data[i][0] = races.get(i).country();
+            data[i][1] = races.get(i).date();
+            data[i][2] = races.get(i).driver().substring(0, races.get(i).driver().lastIndexOf(" "));
+            data[i][3] = races.get(i).team();
+            data[i][4] = races.get(i).laps();
+            data[i][5] = races.get(i).time();
         }
 
         String[] colNames = {"Grand Prix", "Date", "Winner", "Car", "Laps", "Time"};
@@ -545,8 +535,6 @@ public class GUI {
     }
         public static void main (String[]args){
             GUI gui = new GUI();
-
-
         }
     }
 
