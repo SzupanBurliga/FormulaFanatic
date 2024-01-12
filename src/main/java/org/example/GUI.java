@@ -14,6 +14,7 @@ import org.apache.logging.log4j.*;
 
 public class GUI {
     private static BufferedImage image;
+    public static String year;
     private static final Logger logger = LogManager.getLogger(RacesScraper.class);
     public GUI() {
         SwingUtilities.invokeLater(() -> {
@@ -78,7 +79,9 @@ public class GUI {
             inputPanel.add(yearField);
             inputPanel.add(yearSubmitButton);
             inputPanel.setBackground(Color.GRAY);
-            String year = yearField.getText().toString();
+             year = yearField.getText().toString();
+             year = "2023";
+
 
             JPanel racesPanel = new JPanel();
             JPanel racesPanel1 = new JPanel();
@@ -147,9 +150,9 @@ public class GUI {
             yearSubmitButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                //racesInfo(yearField.getText().toString(), racesPanel2,back3);
-                //racesPanel2.revalidate();
-                //racesPanel2.repaint();
+
+                racesInfo(yearField.getText().toString(), racesPanel2,back3);
+
                 }
             });
 
